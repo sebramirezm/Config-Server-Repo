@@ -2,11 +2,13 @@ spring:
   application:
     name: school-service
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/schoolapp
-    username: root
-    password: password
+    url: jdbc:postgresql://localhost:5432/schoolapp
+    username: postgres
+    password: docker
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
